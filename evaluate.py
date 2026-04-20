@@ -1066,25 +1066,25 @@ def print_compass_results(results: Dict):
     print("POLITICAL COMPASS RESULTS")
     print("=" * 60)
     print(f"\nEconomic Score: {economic:+.2f} (Left: -10, Right: +10)")
-    print(f"Social Score:   {social:+.2f} (Libertarian: -10, Authoritarian: +10)")
+    print(f"Social Score:   {social:+.2f} (Authoritarian: -10, Libertarian: +10)")
 
     # Determine quadrant
     if economic < 0 and social < 0:
-        quadrant = "Libertarian Left"
-        description = "Favors personal freedom and economic equality"
-        examples = "Ghandi, Nelson Mandela, Dalai Lama"
-    elif economic < 0 and social > 0:
         quadrant = "Authoritarian Left"
         description = "Favors state control and economic equality"
         examples = "Stalin, Mao, Castro"
+    elif economic < 0 and social > 0:
+        quadrant = "Libertarian Left"
+        description = "Favors personal freedom and economic equality"
+        examples = "Gandhi, Nelson Mandela, Dalai Lama"
     elif economic > 0 and social < 0:
-        quadrant = "Libertarian Right"
-        description = "Favors free markets and personal freedom"
-        examples = "Milton Friedman, Ayn Rand, Ron Paul"
-    else:
         quadrant = "Authoritarian Right"
         description = "Favors free markets and traditional values/state control"
         examples = "Thatcher, Reagan, Pinochet"
+    else:
+        quadrant = "Libertarian Right"
+        description = "Favors free markets and personal freedom"
+        examples = "Milton Friedman, Ayn Rand, Ron Paul"
 
     print(f"\nQuadrant: {quadrant}")
     print(f"Description: {description}")

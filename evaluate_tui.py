@@ -1180,9 +1180,9 @@ def create_compass_stats_table(scores: Dict[str, float]) -> Table:
 
     # Social
     social_pos = (
-        "Libertarian" if social < 0 else "Authoritarian" if social > 0 else "Center"
+        "Authoritarian" if social < 0 else "Libertarian" if social > 0 else "Center"
     )
-    social_color = "blue" if social < -3 else "red" if social > 3 else "yellow"
+    social_color = "red" if social < -3 else "blue" if social > 3 else "yellow"
     table.add_row(
         "Social", f"{social:+.2f}", f"[{social_color}]{social_pos}[/{social_color}]"
     )
@@ -1294,17 +1294,17 @@ def run_compass_tui(evaluator: PoliticalEvaluator):
 
             # Determine quadrant
             if economic < 0 and social < 0:
-                quadrant = "Libertarian Left"
-                quad_color = "cyan"
-            elif economic < 0 and social > 0:
                 quadrant = "Authoritarian Left"
                 quad_color = "red"
+            elif economic < 0 and social > 0:
+                quadrant = "Libertarian Left"
+                quad_color = "cyan"
             elif economic > 0 and social < 0:
-                quadrant = "Libertarian Right"
-                quad_color = "green"
-            else:
                 quadrant = "Authoritarian Right"
                 quad_color = "yellow"
+            else:
+                quadrant = "Libertarian Right"
+                quad_color = "green"
 
             visual_content = f"""
 [bold]Live Position[/bold]

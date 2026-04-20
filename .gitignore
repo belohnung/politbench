@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.ruff_cache/
+
+# Local output artifacts
+evaluation_results.json
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
